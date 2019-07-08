@@ -9,6 +9,8 @@
 			<?php else : ?>
 				<?php echo apautop('Sorry, no posts were found'); ?>
 			<?php endif; ?>
+
+			<?php comments_template(); ?>
 		</div>
 
 		<div class="side">
