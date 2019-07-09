@@ -1,0 +1,38 @@
+/*
+    Theme Name: WordStrap
+    Author: Alax H. 
+    Author URI: alamgir.online
+    Descriptin: Simple Bootstrap Theme for Wordpress
+    Verson: 1.0.0
+
+*/
+article.post{
+    border-bottom: #ccc solid 1px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+article.post:last-child{
+    border-bottom: none;
+}
+article.post img{
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+article.post .meta{
+    background:#f4f4f4;
+    padding: 8px 12px;
+    color: #333;
+}
+.comment-list{
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.comment-item{
+    overflow:auto;
+}
+.vcard img{
+    padding-right: 15px;
+    padding-bottom: 5px;
+}
