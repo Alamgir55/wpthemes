@@ -3,7 +3,27 @@
     <section class="row title-bar">
       <div class="container">
         <div class="col-md-12">
-          <h1><?php echo __('Blog'); ?></h1>
+          <h1>
+              <?php 
+                if(is_category()){
+                    single_cat_title();
+                }else if(is_author()){
+                    the_post();
+                    echo 'Archives By Author: ' .get_the_author();
+                    rewind_posts();
+                }else if(is_tag()){
+                    single_tag_title();
+                }else if(is_day()){
+                    echo 'Archives By Day: ' .get_the_date();
+                }else if(is_month()){
+                    echo 'Archives By Day: ' .get_the_date('F Y');
+                }else if(is_year()){
+                    echo 'Archives By Day: ' .get_the_date('Y');
+                }else{
+                    echo 'Archives';
+                }
+              ?>
+          </h1>
         </div>
       </div>
     </section>

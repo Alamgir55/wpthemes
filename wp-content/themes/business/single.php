@@ -1,9 +1,11 @@
 <?php get_header(); ?>
 
+<?php if(have_posts()): ?>
+  <?php while(have_posts()): the_post(); ?>
     <section class="row title-bar">
       <div class="container">
         <div class="col-md-12">
-          <h1><?php echo __('Blog'); ?></h1>
+          <h1><?php the_title(); ?></h1>
         </div>
       </div>
     </section>
@@ -14,21 +16,16 @@
             <div class="col-md-8">
         <?php else : ?>
             <div class="col-md-12">
-        <?php endif; ?>
-          <?php if(have_posts()): ?>
-              <?php while(have_posts()): the_post(); ?>
+        <?php endif; ?>          
                       <article class="post">
-                    <div class="col-md-5">
+                   
                       <div class="post-thumbnail">
                         <?php if(has_post_thumbnail()): ?>
                           <?php the_post_thumbnail(); ?>
                         <?php endif; ?>
-                      </div>
-                    <a href="<?php the_permalink(); ?>" class="btn btn-primary btn-block">
-                       <?php echo __('Read More'); ?> 
-                    </a>
                     </div>
-                    <div class="col-md-7">
+
+                    
                     <ul class="meta">
                       <li>By 
                         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a>
@@ -49,13 +46,14 @@
                         ?>
                       </li>
                     </ul>
-                      <h3><?php the_title(); ?></h3>
-                        <p><?php the_excerpt(); ?></p>
-                    </div>
+                          <br>
+                        <p><?php the_content(); ?></p>
+                    
                     </article>
                     <div class="clr"></div>
               <?php endwhile; ?>
           <?php endif; ?>
+            <?php comments_template(); ?>              
             </div>
 
         <?php if(is_active_sidebar('sidebar')): ?>
