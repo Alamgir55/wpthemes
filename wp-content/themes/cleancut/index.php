@@ -1,53 +1,22 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-	<title <?php bloginfo('name'); ?>  <?php wp_title(''); ?> >CleanCut Theme</title>
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css">
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/animate.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/font-awesome.css">
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-    <style>
-        .showcase{
-            height: 700px;
-            background:url('./img/showcase.jpg');
-        }
-
-        .banner{
-            background:url('./img/banner.jpg') no-repeat center center;
-        }
-    </style>
-</head>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">CleanCut Theme</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
+    <?php get_header(); ?>
     <section class="row showcase animated fadeIn">
 	    <div class="container">
 		    <div class="col-md-12">
 			    <div class="showcase-content">
-				    <h1>CleanCut Theme</h1>
-				    <p class="lead">Custom Wordpress Theme By You</p>
-				    <a class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
-				            <a class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
-				            <a class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> Linkedin</a>
+				    <h1><?php echo get_theme_mod('showcase_heading', 'CleanCut Theme'); ?></h1>
+                    <p class="lead"><?php echo get_theme_mod('showcase_text', 'Custom Wordpress Theme By You'); ?></p>
+                    <?php if(get_theme_mod('facebook_url', 'http://facebook.com') != ''): ?>
+                    <a class="btn btn-default btn-lg" href="<?php echo get_theme_mod('facebook_url', 'http://facebook.com'); ?>" target="_blank"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
+                    <?php endif; ?>
+
+                    <?php if(get_theme_mod('twitter_url', 'http://twitter.com') != ''): ?>
+                    <a class="btn btn-default btn-lg" href="<?php echo get_theme_mod('twitter_url', 'http://facebook.com'); ?>" target="_blank"><i class="fa fa-twitter fa-fw"></i> Facebook</a>
+                    <?php endif; ?>
+
+                    <?php if(get_theme_mod('linkedin_url', 'http://linkedin.com') != ''): ?>
+                    <a class="btn btn-default btn-lg" href="<?php echo get_theme_mod('linkedin_url', 'http://linkedin.com'); ?>" target="_blank"><i class="fa fa-linkedin fa-fw"></i> Facebook</a>
+                    <?php endif; ?>    
+				           
 			    </div>
 		    </div>
 	    </div>
@@ -101,53 +70,7 @@
         </div>
     </div>
 
-    <section class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>Follow Us On Social Media:</h2>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
+    <?php get_footer(); ?>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; CleanCut Theme 2016. All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
